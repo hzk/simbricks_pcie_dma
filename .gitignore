@@ -1,0 +1,91 @@
+# 操作系统生成的文件
+.DS_Store                # macOS
+Thumbs.db                # Windows
+desktop.ini              # Windows
+
+# 日志文件
+*.log
+
+# 临时文件和目录
+*.tmp
+*.swp
+*.swo
+*~
+*.bak
+*.old
+
+# 临时编译文件
+*.obj
+*.o
+*.a
+*.lib
+*.so
+*.dll
+*.exe
+*.out
+
+# 存档和压缩文件
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# 用户特定配置文件
+*.sublime-project
+*.sublime-workspace
+.idea/
+.vscode/
+
+# 编译输出目录
+/build/
+/bin/
+/debug/
+/release/
+
+# 编译生成文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 虚拟环境
+venv/
+.env
+
+# pipenv
+Pipfile.lock
+
+# 编译输出目录
+/target/
+/bin/
+/build/
+
+# IDE 配置文件
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# Node modules 目录
+node_modules/
+
+# log 文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv 环境变量文件
+.env
+
+# 编译生成文件
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go 工作区
+/pkg/
+
+/out/
