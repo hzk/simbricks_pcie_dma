@@ -33,6 +33,7 @@
 #include "driver.h"
 #include "../common/common.h"
 
+#ifndef FORCACTUS
 int main(int argc, char *argv[])
 {
 	dprintf("~~~~~~~hosts start.\n");
@@ -53,3 +54,4 @@ int main(int argc, char *argv[])
   }
   return 0;
 }
+#endif

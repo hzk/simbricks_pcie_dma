@@ -53,3 +53,18 @@ class HWAccelSim(sim.PCIDevSim):
              env.dev_pci_path(self), env.dev_shm_path(self))
         return cmd
 
+# Simulator component for CACTUS
+class HWCACTUSSim(sim.PCIDevSim):
+    sync = True
+
+    def __init__(self, sim, clock_period):
+        super().__init__()
+        self.sim = sim
+        self.clock_period = clock_period
+
+    def run_cmd(self, env):
+        cmd = '%s%s %d %s %s' % \
+            (os.getcwd(), f'/../CACTUS/build/bin/cactus', self.clock_period,
+             env.dev_pci_path(self), env.dev_shm_path(self))
+        return cmd
+
