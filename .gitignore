@@ -89,3 +89,4 @@ yarn-error.log*
 /pkg/
 
 /out/
+/sim_output/

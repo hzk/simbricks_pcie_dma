@@ -261,11 +261,12 @@ int main(int argc, char *argv[])
 }
 #else
 void main_for_CACTUS(int argc, char *argv[]){
+	
 	dprintf("hello CACTUS 2024 06 22!");
 	dprintf("~~~~~init\n");
     if (ParseOptions(argc, argv))
       return 1;
-
+/*
     if (InitState())
       return 1;
 
@@ -275,5 +276,21 @@ void main_for_CACTUS(int argc, char *argv[]){
 	dprintf("RunLoop start\n");
 	RunLoop();
 	dprintf("RunLoop end\n");
+	*/
 }
+void read_start_for_CACTUS(readBack rb){
+	dprintf("hello CACTUS 2024 06 26!");
+	dprintf("~~~~~init\n");
+
+    if (InitState_rb(rb))
+      return 1;
+
+    if (InitSimBricks())
+      return 1;
+
+	dprintf("RunLoop start\n");
+	RunLoop();
+	dprintf("RunLoop end\n");
+}
+
 #endif

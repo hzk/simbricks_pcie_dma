@@ -26,7 +26,8 @@
 #define ACCEL_SIM_SIM_H_
 
 #include <stdint.h>
-
+#include "../common/common.h"
+#include "plumbing.h"
 #include <simbricks/pcie/proto.h>
 
 /******************************************************************************/
@@ -68,7 +69,7 @@ extern uint64_t clock_period;
  * simulation model state.
 */
 int InitState(void);
-
+int InitState_rb(readBack rb);
 /**
  * Called for every register read. You must complete each operation with a
  * corresponding read completion sent with SendPcieOut.

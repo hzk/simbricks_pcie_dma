@@ -160,8 +160,8 @@ int accelerator_run(size_t loop){
     fclose(file);
 	dprintf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~read eqasm end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~:");
 
-	char buf[]="123ABCDEFGH456 TEST HAHA 2024 06 20";
-	dma_write(buf,sizeof(buf));
+	//char buf[]="123ABCDEFGH456 TEST HAHA 2024 06 20";
+	//dma_write(buf,sizeof(buf));
 	return 0;
 }
 

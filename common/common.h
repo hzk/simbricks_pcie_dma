@@ -27,6 +27,9 @@ inline static char* get_hostname() {
 
 #define dprintf(fmt, ...) \
     fprintf(stdout, "ꚰꚰꚰ %s:%s:%d %s:%d-%luꚰꚰꚰ : " fmt "\n", __FILE__, __func__, __LINE__,get_hostname(),getpid(),pthread_self(), ##__VA_ARGS__)
+
+#define sprintf(fmt, ...) \
+    fprintf(stdout, "ꚰꚰꚰ %s:%d-%luꚰꚰꚰ : " fmt "\n",get_hostname(),getpid(),pthread_self(), ##__VA_ARGS__)
 #else
 #define eprintf(...) do { } while (0)
 #define dprintf(...) do { } while (0)

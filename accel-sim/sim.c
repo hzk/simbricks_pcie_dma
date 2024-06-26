@@ -55,6 +55,12 @@ uint64_t start_time;
 char * buffer_in;
 char * buffer_out;
 
+static readBack _rb = NULL;
+int InitState_rb(readBack rb){
+	_rb = rb;
+	InitState();
+	return 0;
+}
 int InitState(void) {
   // FILL ME IN
   	buffer_in = malloc(1024*1024);
@@ -90,6 +96,9 @@ void dma_trans_complete(volatile union SimbricksProtoPcieH2D *msg,uint8_t type){
 	if (type == SIMBRICKS_PROTO_PCIE_H2D_MSG_READCOMP) {
 		memcpy((uint8_t *) buffer_in, (void *) msg->readcomp.data,dma_len);
 		dprintf("read data:%s",buffer_in);
+		if(_rb!=NULL){
+			_rb(buffer_in);
+		}
 	} else if (type == SIMBRICKS_PROTO_PCIE_H2D_MSG_WRITECOMP) {
 
 	} else {
