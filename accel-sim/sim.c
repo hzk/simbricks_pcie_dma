@@ -92,10 +92,11 @@ static void request_dma (bool iswrite,uint64_t request_id,uint64_t addr,uint64_t
 }
 
 void dma_trans_complete(volatile union SimbricksProtoPcieH2D *msg,uint8_t type){
-	dprintf("DMA trans complete");
+	//dprintf("DMA trans complete");
 	if (type == SIMBRICKS_PROTO_PCIE_H2D_MSG_READCOMP) {
+		memset(buffer_in,0,sizeof(buffer_in));
 		memcpy((uint8_t *) buffer_in, (void *) msg->readcomp.data,dma_len);
-		dprintf("read data:%s",buffer_in);
+		//dprintf("read data:%ld %s",strlen(buffer_in),buffer_in);
 		if(_rb!=NULL){
 			_rb(buffer_in);
 		}

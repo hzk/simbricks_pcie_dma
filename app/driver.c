@@ -149,11 +149,15 @@ int accelerator_run(size_t loop){
 
     // 读取并打印文件内容
     while (fgets(line, sizeof(line), file)) {
-		if(!is_empty_or_comment_line(line)){
-			dprintf("new command:%s,len:%ld", line,strlen(line));
-			//dma_write(line,sizeof(line));
-			dma_write(line,strlen(line)+1);
+		size_t len = strlen(line);
+		if (len > 0 && line[len-1] == '\n') {
+			line[len-1] = '\0'; 
 		}
+		//if(!is_empty_or_comment_line(line)){
+			//dprintf("new command:%s,len:%ld", line,strlen(line));
+			//dma_write(line,sizeof(line));
+			dma_write(line,len);
+		//}
     }
 
     // 关闭文件

@@ -184,12 +184,12 @@ static void PollPcie(void) {
       break;
 
     case SIMBRICKS_PROTO_PCIE_H2D_MSG_READCOMP:
-	  dprintf("~~~~~~~~~~~~~~~~~~~READ COMP SIMBRICKS_PROTO_PCIE_H2D_MSG_READCOMP");
+	  //dprintf("~~~~~~~~~~~~~~~~~~~READ COMP SIMBRICKS_PROTO_PCIE_H2D_MSG_READCOMP");
 		dma_trans_complete(msg,type);
       break;
 
     case SIMBRICKS_PROTO_PCIE_H2D_MSG_WRITECOMP:
-	  dprintf("~~~~~~~~~~~~~~~~~~~WRITE COMP SIMBRICKS_PROTO_PCIE_H2D_MSG_WRITECOMP");
+	  //dprintf("~~~~~~~~~~~~~~~~~~~WRITE COMP SIMBRICKS_PROTO_PCIE_H2D_MSG_WRITECOMP");
 		dma_trans_complete(msg,type);
       break;
 

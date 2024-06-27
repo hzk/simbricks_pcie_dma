@@ -18,6 +18,7 @@ clean:
 	-python3 tests/`basename $< .sim.py`.check.py 2>&1 | tee $@
 
 dma.out: app/matmul-accel accel-sim/sim
+dma.cactus.out: app/matmul-accel accel-sim/sim
 
 check:
 	-for c in tests/*.check.py; do python3 $$c; done
