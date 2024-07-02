@@ -84,6 +84,7 @@ yarn-error.log*
 *.dll
 *.so
 *.dylib
+app/matmul-accel
 
 # Go 工作区
 /pkg/

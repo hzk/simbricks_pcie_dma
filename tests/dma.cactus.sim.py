@@ -14,7 +14,7 @@ e = exp.Experiment(f'dma')
 server_config = HwAccelNode()
 server_config.app = MatMulApp(8)
 server_config.nockp = True
-server_config.disk_image = '/root/pathfinder/simbrick/simbricks-examples/custom-image/output-memcached/memcached'
+server_config.disk_image = '/root/simbricks-examples/custom-image/output-memcached/memcached'
 
 server = sim.Gem5Host(server_config)
 server.name = 'host'
